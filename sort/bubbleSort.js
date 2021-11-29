@@ -1,13 +1,16 @@
-const swap = (arr, idx1, idx2) =>
-  ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
+function swap(arr, idx1, idx2) {
+  let temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
 
 function bubbleSort(arr) {
   let noSwap;
-  for (let i = 0; i < arr.length - 1; i++) {
+  for (let j = 0; j < arr.length - 1; j++) {
     noSwap = true;
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] < arr[j + 1]) {
-        swap(arr, j + 1, j);
+    for (let i = 0; i < arr.length - j - 1; i++) {
+      if (arr[i] < arr[i + 1]) {
+        swap(arr, i, i + 1);
         noSwap = false;
       }
     }
